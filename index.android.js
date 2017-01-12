@@ -47,7 +47,7 @@ class MainView extends Component {
       ,{
         key:2,
         title:"twitter",
-        component: TextInputComp,
+        component: Twitter,
         isFA: false,
         icon: "logo-twitter",
         size:50,
@@ -160,26 +160,27 @@ class MainView extends Component {
       //<NavigatorComp />
       //<MainView title="hello world"/>
       //<SwiperDiy />
-
-      <ScrollView style={styles.mainView} title={this.props.title} activeDot={<View style={{backgroundColor:'rgba(255,255,255,0.8)', width:8, height:8, borderRadius:4, marginLeft:3, marginRight:3, marginBottom:3, marginTop:3}}/>}>
-        <Swiper height={150} showButton={false} autoplay={true}>
-            <View style={styles.slide} >
-              <Image style={styles.image} source={require('./views/img/day1.png')}></Image>
-              <Text style={styles.slidText} >Day1 : Timer</Text>
-            </View>
-            <View style={styles.slide}>
-              <Image style={styles.image} source={require('./views/img/day2.png')}></Image>
-              <Text style={styles.slidText}>Day2 : Weather</Text>
-            </View>
-            <View style={styles.slide}>
-              <Image style={styles.image} source={require('./views/img/vwin.jpg')}></Image>
-              <Text style={styles.slidText}>Day3 : Vwin</Text>
-            </View>
-        </Swiper>
-        <View style={styles.touchBoxContainer}>
-          {boxs}
-        </View>
-      </ScrollView>
+      <View>
+        <ScrollView style={styles.mainView} title={this.props.title} activeDot={<View style={{backgroundColor:'rgba(255,255,255,0.8)', width:8, height:8, borderRadius:4, marginLeft:3, marginRight:3, marginBottom:3, marginTop:3}}/>}>
+          <Swiper height={150} showButton={false} autoplay={true}>
+              <View style={styles.slide} >
+                <Image style={styles.image} source={require('./views/img/day1.png')}></Image>
+                <Text style={styles.slidText} >Day1 : Timer</Text>
+              </View>
+              <View style={styles.slide}>
+                <Image style={styles.image} source={require('./views/img/day2.png')}></Image>
+                <Text style={styles.slidText}>Day2 : Weather</Text>
+              </View>
+              <View style={styles.slide}>
+                <Image style={styles.image} source={require('./views/img/vwin.jpg')}></Image>
+                <Text style={styles.slidText}>Day3 : Vwin</Text>
+              </View>
+          </Swiper>
+          <View style={styles.touchBoxContainer}>
+            {boxs}
+          </View>
+        </ScrollView>
+      </View>
     );
   }
 
@@ -242,7 +243,6 @@ class AppDemo extends Component {
 
   render() {
     return (
-    <View>
       <Navigator
         initialRoute={{name: '30 Days of RN', index: 0, display:true, component:MainView}}
         cofigureScene={this.configScene}
@@ -253,7 +253,6 @@ class AppDemo extends Component {
           <NavigatorBar routeMapper = {this.routeMapper} styles={styles.navBar} />
         }
       />
-      <Twitter/></View>
     );
   }
 }
