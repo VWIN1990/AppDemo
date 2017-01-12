@@ -1,0 +1,17 @@
+{
+	"data": [
+		{
+			"img":"./img/day1.png",
+			"title":"img1"
+		},
+		{
+			"img":"../img/day2.png",
+			"title":"img2"
+		},
+		{
+			"img":"./views/img/vwin.jpg",
+			"title":"win"
+		}
+
+	]
+}	
